@@ -1,17 +1,21 @@
-# lang-plist
-Plist Intellijidea plugin
+## JSON Plist Language
 
+In the OS X, iOS, NeXTSTEP, and GNUstep programming frameworks, property list files are files that store serialized objects. Property list files use the filename extension .plist, and thus are often referred to as p-list files.
+Property list files are often used to store a user's settings. They are also used to store information about bundles and applications, a task served by the resource fork in the old Mac OS.
 
+In summary, JSON Plist is a lightweight configuration language.  Following is a list of all the features:
 
-Plist is a simple configuration language.  Following is a list of all the features:
-(1)  starts with '{', end with '}'
-(2)  key and value could wrappend inside quote or not.
-(3)  each entry must end with ';'
-(4)  2 types of comments:  // and /* .. */
-(5)  array entry separated by ','
+  - Must starts with '{', end with '}'
+  - Key and value could wrapped inside quote or not.
+  - Key should not contains whitespace.
+  - If value contains whitespace, then it has to be wrapped inside double quote.
+  - Each entry (Either an object or key-value pair) must end with ';'
+  - Array items separated by comma ','.
+  - There are 2 types of comments: // and /* .... */
 
+## Sample Plist File
+```java
 {
-
     // A simple key,value pair
 
     "key" = "value";
@@ -41,3 +45,10 @@ Plist is a simple configuration language.  Following is a list of all the featur
     /*  block comment */
 
 }
+```
+
+## References
+
+* [https://en.wikipedia.org/wiki/Property_list] [Property list]
+* [https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PropertyLists/OldStylePlists/OldStylePLists.html] [Old-Style ASCII Property Lists]
+
