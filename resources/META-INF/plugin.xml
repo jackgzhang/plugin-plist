@@ -30,6 +30,7 @@
     <lang.parserDefinition language="Plist" implementationClass="com.z.lang.plist.PlistParserDefinition"/>
     <lang.syntaxHighlighterFactory key="Plist" implementationClass="com.z.lang.plist.PlistSyntaxHighlighterFactory"/>
     <colorSettingsPage implementation="com.z.lang.plist.PlistColorSettingsPage"/>
+    <lang.foldingBuilder language="Plist" implementationClass="com.z.lang.plist.PlistFoldingBuilder"/>
   </extensions>
 
   <actions>
