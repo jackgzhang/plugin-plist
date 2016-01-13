@@ -1,0 +1,42 @@
+{
+
+  tokens = [
+
+    comma = ","
+    brace1 = "{"
+    brace2 = "}"
+    parenthesis1 = "("
+    parenthesis2 = ")"
+    semicolon = ";"
+    assignment = "="
+
+    space='regexp:\s+'
+    string = "regexp:\"[^\"]*\"|\w*"
+    line_comment="regexp://.*"
+    block_comment='regexp:/\*((?<!\*/)(.|\n))*'
+  ]
+
+    parserClass="com.z.lang.plist.parser.PlistParser"
+    parserUtilClass="com.z.lang.plist.parser.PlistParserUtil"
+
+    extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+    psiClassPrefix="Plist"
+    psiImplClassSuffix="Impl"
+    psiPackage="com.z.lang.plist.psi"
+    psiImplPackage="com.z.lang.plist.psi.impl"
+
+    elementTypeHolderClass="com.z.lang.plist.psi.PlistTypes"
+    elementTypeClass="com.z.lang.plist.PlistElementType"
+    tokenTypeClass="com.z.lang.plist.PlistTokenType"
+
+    psiImplUtilClass="com.z.lang.plist.PlistPsiImplUtil"
+}
+
+root ::= object
+object ::= brace1 item* brace2
+item ::= prop '=' value ';'
+prop ::= string
+value ::=  [string | array | object ]
+array ::= parenthesis1 array_item  (',' array_item)* parenthesis2
+array_item ::= [ string | object ]
